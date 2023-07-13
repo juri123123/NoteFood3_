@@ -71,6 +71,7 @@ struct ProfileView: View {
                         .padding()
                         .background(Color(uiColor: .secondarySystemBackground))
                     
+                    
                 }
             }
             
