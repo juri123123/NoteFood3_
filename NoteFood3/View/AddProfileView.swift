@@ -13,8 +13,8 @@ struct AddProfileView: View {
     @Environment(\.dismiss) var dismiss
     
     @State var name: String = ""
-    @State var height: Double = 0
-    @State var weight: Double = 0
+    @State var height: String = ""
+    @State var weight: String = ""
     
     var body: some View{
         
@@ -31,7 +31,7 @@ struct AddProfileView: View {
                     }
                     HStack {
                         Text("height:")
-                        TextField("Enter your height", value: $height, formatter: formatter)
+                        TextField("Enter your height", text: $height)
                             .padding()
                             .background(Color(uiColor: .secondarySystemBackground))
                         
@@ -39,7 +39,7 @@ struct AddProfileView: View {
                     
                     HStack {
                         Text("weight:")
-                        TextField("Enter your weight", value: $weight, formatter: formatter)
+                        TextField("Enter your weight", text: $weight)
                             .padding()
                             .background(Color(uiColor: .secondarySystemBackground))
                        
@@ -71,8 +71,8 @@ struct AddProfileView: View {
     func addUser() {
         let newUser = User(context: viewContext)
         newUser.name = self.name
-        newUser.weight = 50
-        newUser.height = 160
+        newUser.weight = self.weight
+        newUser.height = self.height
         newUser.gender = "female"
 
         do {

@@ -17,8 +17,8 @@ struct PersistenceController {
             let newItem = User(context: viewContext)
             newItem.name = "juri"
             newItem.gender = "female"
-            newItem.weight = 50
-            newItem.height = 160
+            newItem.weight = "50"
+            newItem.height = "160"
         }
         do {
             try viewContext.save()

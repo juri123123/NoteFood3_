@@ -21,6 +21,8 @@
 		CB4D42B62A58030A000D52D1 /* FoodDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D42B52A58030A000D52D1 /* FoodDataController.swift */; };
 		CB4D42B82A580EED000D52D1 /* UserDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D42B72A580EED000D52D1 /* UserDataController.swift */; };
 		CB4D42C42A602403000D52D1 /* AddProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D42C32A602403000D52D1 /* AddProfileView.swift */; };
+		CB4D42CE2A712D17000D52D1 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D42CD2A712D17000D52D1 /* DateValue.swift */; };
+		CB4D42D02A7130F5000D52D1 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D42CF2A7130F5000D52D1 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		CB4D42B52A58030A000D52D1 /* FoodDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDataController.swift; sourceTree = "<group>"; };
 		CB4D42B72A580EED000D52D1 /* UserDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataController.swift; sourceTree = "<group>"; };
 		CB4D42C32A602403000D52D1 /* AddProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileView.swift; sourceTree = "<group>"; };
+		CB4D42CD2A712D17000D52D1 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		CB4D42CF2A7130F5000D52D1 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 				CB4D42AA2A57FF8C000D52D1 /* AddView.swift */,
 				CB4D42AD2A57FFB0000D52D1 /* ResultView.swift */,
 				CB4D42C32A602403000D52D1 /* AddProfileView.swift */,
+				CB4D42CF2A7130F5000D52D1 /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				CB4D42B02A58002B000D52D1 /* CustomCalendar.swift */,
+				CB4D42CD2A712D17000D52D1 /* DateValue.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -191,11 +197,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4D42D02A7130F5000D52D1 /* TestView.swift in Sources */,
 				CB4D42AB2A57FF8C000D52D1 /* AddView.swift in Sources */,
 				CB4D429C2A55A5EF000D52D1 /* Persistence.swift in Sources */,
 				CB4D42A92A57FF6F000D52D1 /* MainView.swift in Sources */,
 				CB4D42952A55A5EE000D52D1 /* ContentView.swift in Sources */,
 				CB4D42A72A57FF5E000D52D1 /* ProfileView.swift in Sources */,
+				CB4D42CE2A712D17000D52D1 /* DateValue.swift in Sources */,
 				CB4D42B12A58002B000D52D1 /* CustomCalendar.swift in Sources */,
 				CB4D42AE2A57FFB0000D52D1 /* ResultView.swift in Sources */,
 				CB4D42B62A58030A000D52D1 /* FoodDataController.swift in Sources */,

@@ -27,8 +27,8 @@ struct ProfileView: View {
         }()
     
     @State private var name = ""
-    @State var height: Double = 0
-    @State var weight: Double = 0
+    @State var height: String = ""
+    @State var weight: String = ""
 
     
     
@@ -53,6 +53,20 @@ struct ProfileView: View {
                     Text("name : ")
                     TextField("\(user.name!)", text:$name).onAppear() {
                         self.name = user.name!
+                        
+                    }
+                        .padding()
+                        .background(Color(uiColor: .secondarySystemBackground))
+                    
+                }
+                HStack {
+                    
+                    Text("height:")
+                    TextField("\(user.height!)", text:$height).onAppear() {
+                        
+                        self.height = user.height!
+                        //self.height = user.name!
+                        
                     }
                         .padding()
                         .background(Color(uiColor: .secondarySystemBackground))
@@ -60,27 +74,22 @@ struct ProfileView: View {
                 }
                 HStack {
                     Text("height:")
-                    TextField("\(user.height)", value: $height, formatter: formatter)
+                    TextField("\(user.weight!)", text:$weight).onAppear() {
+                        self.name = user.name!
+                        
+                    }
                         .padding()
-                        .background(Color(uiColor: .secondarySystemBackground))
-                    
-                }
-                HStack {
-                    Text("height:")
-                    TextField("\(user.weight)", value: $weight, formatter: formatter)
-                        .padding()
-                        .background(Color(uiColor: .secondarySystemBackground))
-                    
-                    
+                    .background(Color(uiColor: .secondarySystemBackground))
                 }
             }
+        
             
             Button(action: {
                 //DB에 회원정보 저장
                 //mainpage로 이동
                 
                 UserDataContorller()
-                    .editUser(user: user, name: name, context: managedObjectContext)
+                    .editUser(user: user, name: name, weight: weight, height: height, context: managedObjectContext)
                 dismiss()
                 
              

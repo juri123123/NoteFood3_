@@ -29,7 +29,7 @@ class UserDataContorller: ObservableObject {
         }
     }
     
-    func createUser(name: String, gender: String, weight: Double, height: Double, context: NSManagedObjectContext) {
+    func createUser(name: String, gender: String, weight: String, height: String, context: NSManagedObjectContext) {
         let user = User(context: context)
         
         user.name = name
@@ -40,20 +40,20 @@ class UserDataContorller: ObservableObject {
         save(context: context)
     }
     
-//
-//    func editUser(user: User, name: String, gender: String, weight: Double, height: Double, context: NSManagedObjectContext) {
+
+    func editUser(user: User, name: String, weight: String, height: String, context: NSManagedObjectContext) {
+        user.name = name
+        //user.gender = gender
+        user.weight = weight
+        user.height = height
+
+        save(context: context)
+    }
+//    func editUser(user: User, name: String, context: NSManagedObjectContext) {
 //        user.name = name
-//        user.gender = gender
-//        user.weight = weight
-//        user.height = height
 //
 //        save(context: context)
 //    }
-    func editUser(user: User, name: String, context: NSManagedObjectContext) {
-        user.name = name
-        
-        save(context: context)
-    }
- 
+//
 }
 
