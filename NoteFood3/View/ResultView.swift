@@ -18,14 +18,30 @@ struct ResultView: View {
 //    private var protein: Double = 0
 //    private var province: Double = 0
 //    private var water: Int = 0
-    
+//
     @State private var alertShow = false
     
     var body: some View {
+        
+//        if let items = user.foods!.allObjects as? [Food] {
+//            ForEach(items) { item in
+//                let todayStr = formatter.string(from: today)
+//                let itemStr = formatter.string(from: item.today!)
+//                let _ = print("today: \(itemStr)")
+//                if todayStr == itemStr {
+//                    carbo += Double(item.carbo)
+//                    protein = Double(item.protein)
+//                    province = Double(item.province)
+//                    water = Int(item.water)
+//                }
+//
+//            }
+//        }
+//
         ZStack{
             ColorManager.BackgroundColor.ignoresSafeArea()
             VStack{
-                Text("Today")
+                Text("\(formatter.string(from: today))")
                     .font(.title2)
                 
                 Divider()
@@ -94,6 +110,11 @@ struct ResultView: View {
            
         }
     }
+    let formatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM/dd"
+            return formatter
+        }()
 }
 //
 //struct ResultView_Previews: PreviewProvider {

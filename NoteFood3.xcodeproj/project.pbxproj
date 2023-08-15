@@ -23,6 +23,8 @@
 		CB4D42C42A602403000D52D1 /* AddProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D42C32A602403000D52D1 /* AddProfileView.swift */; };
 		CB4D42CE2A712D17000D52D1 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D42CD2A712D17000D52D1 /* DateValue.swift */; };
 		CB4D42D02A7130F5000D52D1 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D42CF2A7130F5000D52D1 /* TestView.swift */; };
+		CB9A001D2A8B5D01001163D2 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9A001B2A8B5D01001163D2 /* User+CoreDataClass.swift */; };
+		CB9A001E2A8B5D01001163D2 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9A001C2A8B5D01001163D2 /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		CB4D42C32A602403000D52D1 /* AddProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileView.swift; sourceTree = "<group>"; };
 		CB4D42CD2A712D17000D52D1 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		CB4D42CF2A7130F5000D52D1 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		CB9A001B2A8B5D01001163D2 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CB9A001C2A8B5D01001163D2 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +83,7 @@
 				CB4D42AF2A58001A000D52D1 /* Calendar */,
 				CB4D42A52A55A615000D52D1 /* View */,
 				CB4D42922A55A5EE000D52D1 /* NoteFood3App.swift */,
-				CB4D42942A55A5EE000D52D1 /* ContentView.swift */,
 				CB4D42962A55A5EF000D52D1 /* Assets.xcassets */,
-				CB4D429B2A55A5EF000D52D1 /* Persistence.swift */,
-				CB4D429D2A55A5EF000D52D1 /* NoteFood3.xcdatamodeld */,
 				CB4D42982A55A5EF000D52D1 /* Preview Content */,
 			);
 			path = NoteFood3;
@@ -99,6 +100,7 @@
 		CB4D42A52A55A615000D52D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CB4D42942A55A5EE000D52D1 /* ContentView.swift */,
 				CB4D42A62A57FF5E000D52D1 /* ProfileView.swift */,
 				CB4D42A82A57FF6F000D52D1 /* MainView.swift */,
 				CB4D42AA2A57FF8C000D52D1 /* AddView.swift */,
@@ -121,6 +123,10 @@
 		CB4D42B22A580119000D52D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CB4D429B2A55A5EF000D52D1 /* Persistence.swift */,
+				CB4D429D2A55A5EF000D52D1 /* NoteFood3.xcdatamodeld */,
+				CB9A001B2A8B5D01001163D2 /* User+CoreDataClass.swift */,
+				CB9A001C2A8B5D01001163D2 /* User+CoreDataProperties.swift */,
 				CB4D42B52A58030A000D52D1 /* FoodDataController.swift */,
 				CB4D42B72A580EED000D52D1 /* UserDataController.swift */,
 			);
@@ -199,6 +205,7 @@
 			files = (
 				CB4D42D02A7130F5000D52D1 /* TestView.swift in Sources */,
 				CB4D42AB2A57FF8C000D52D1 /* AddView.swift in Sources */,
+				CB9A001E2A8B5D01001163D2 /* User+CoreDataProperties.swift in Sources */,
 				CB4D429C2A55A5EF000D52D1 /* Persistence.swift in Sources */,
 				CB4D42A92A57FF6F000D52D1 /* MainView.swift in Sources */,
 				CB4D42952A55A5EE000D52D1 /* ContentView.swift in Sources */,
@@ -211,6 +218,7 @@
 				CB4D42B82A580EED000D52D1 /* UserDataController.swift in Sources */,
 				CB4D42932A55A5EE000D52D1 /* NoteFood3App.swift in Sources */,
 				CB4D429F2A55A5EF000D52D1 /* NoteFood3.xcdatamodeld in Sources */,
+				CB9A001D2A8B5D01001163D2 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

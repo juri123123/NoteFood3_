@@ -29,15 +29,15 @@ class FoodDataContorller: ObservableObject {
         }
     }
     
-    func addFood(carbo: Double, protein: Double, province: Double, water: Int32, context: NSManagedObjectContext) {
-        let food = Food(context: context)
-        food.id = UUID()
-        food.today = Date()
-        food.carbo = carbo;
-        food.protein = protein;
-        food.province = province;
-        food.water = water;
-        
-        save(context: context)
-    }
+//    func addFood(carbo: Double, protein: Double, province: Double, water: Int32, context: NSManagedObjectContext) {
+//        let food = Food(context: context)
+//        food.id = UUID()
+//        food.today = Date()
+//        food.carbo = carbo;
+//        food.protein = protein;
+//        food.province = province;
+//        food.water = water;
+//
+//        save(context: context)
+//    }
 }

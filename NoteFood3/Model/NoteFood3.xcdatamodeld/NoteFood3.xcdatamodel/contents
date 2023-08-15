@@ -9,7 +9,7 @@
         <attribute name="water" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="foods" inverseEntity="User"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+    <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="gender" optional="YES" attributeType="String"/>
         <attribute name="height" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -17,7 +17,7 @@
         <relationship name="foods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Food" inverseName="user" inverseEntity="Food"/>
     </entity>
     <elements>
-        <element name="Food" positionX="-63" positionY="18" width="128" height="134"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Food" positionX="-63" positionY="18" width="128" height="148"/>
+        <element name="User" positionX="-296.39453125" positionY="94.0390625" width="117.73828125" height="118"/>
     </elements>
 </model>

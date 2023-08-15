@@ -20,7 +20,7 @@ struct CustomCalendar: View {
             
             // Days
             let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-                        
+            
             HStack(spacing: 20) {
                 
                 
@@ -34,9 +34,9 @@ struct CustomCalendar: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 10) {
-//                    Text(extraDate()[0])
-//                        .font(.caption)
-//                        .fontWeight(.semibold)
+                    //                    Text(extraDate()[0])
+                    //                        .font(.caption)
+                    //                        .fontWeight(.semibold)
                     Text(extraDate()[1])
                         .font(.title.bold())
                 }
@@ -49,7 +49,7 @@ struct CustomCalendar: View {
                     Image(systemName: "chevron.right")
                         .font(.title2)
                 }
-
+                
                 
             }
             .padding()
@@ -57,7 +57,7 @@ struct CustomCalendar: View {
             // Day View...
             HStack(spacing: 0) {
                 ForEach(days, id: \.self) { day in
-                        Text(day)
+                    Text(day)
                         .font(.callout)
                         .fontWeight(.semibold)
                         .frame(maxWidth: .infinity)
@@ -72,7 +72,7 @@ struct CustomCalendar: View {
             
             LazyVGrid(columns: columns, spacing: 15) {
                 ForEach(extractDate()) { value in
-                  CardView(value: value)
+                    CardView(value: value)
                         .background(
                             Capsule()
                                 .fill(.orange)
@@ -87,7 +87,7 @@ struct CustomCalendar: View {
             
             HStack(spacing: 10) {
                 //View 넘길 때 체크된 날짜 정보도 넘기기
-                NavigationLink(destination: AddView(user: user)) {
+                NavigationLink(destination: AddView(user: user, today: currentDate)) {
                     ZStack{
                         Circle()
                             .frame(width: 45)
@@ -97,7 +97,7 @@ struct CustomCalendar: View {
                             .font(.system(size: 25))
                     }
                 }
-                NavigationLink(destination: TestView(user: user)) {
+                NavigationLink(destination: TestView(user: user, today: currentDate)) {
                     ZStack{
                         Circle()
                             .frame(width: 45)
@@ -107,7 +107,7 @@ struct CustomCalendar: View {
                             .font(.system(size: 25))
                     }
                 }
-
+                
                 NavigationLink(destination: ResultView(user: user, today: currentDate)) {
                     ZStack{
                         Circle()
@@ -121,48 +121,48 @@ struct CustomCalendar: View {
             }//HStack
             
             VStack(spacing: 0) {
-//                Text("Tasks")
-//                    .font(.title2.bold())
-//                    .frame(maxWidth: .infinity, alignment: .leading)
-//                    .padding(.vertical , 20)
-
-//                if let task = foods.first(where: { task in
-//                    return isSameDay(date1: task.foodDate, date2: currentDate)
-//                }) {
-//
-//                    ForEach(task.food) { task in
-//
-//                        VStack(alignment: .leading, spacing: 10) {
-//
-//                            Text("탄수화물: " + String(format: "%.1f", task.carbo))
-//                                .font(.body)
-//                            Text("단백질: " + String(format: "%.1f", task.protein))
-//                                .font(.body)
-//                            Text("지방: " + String(format: "%.1f", task.province))
-//                                .font(.body)
-//                            Text("수분: \(task.water)")
-//                                .font(.body)
-//
-//                        }
-//                        .padding(.vertical, 10)
-//                        .padding(.horizontal)
-//                        .frame(maxWidth: .infinity, alignment: .leading)
-//                        .background(
-//                            Color("Purple")
-//                                .opacity(0.5)
-//                                .cornerRadius(10)
-//                                .frame(maxWidth: .infinity)
-//
-//                        )
-//
-//                    }
-//
-//                }else {
-//                    Text("No Task Found")
-//                }
+                //                Text("Tasks")
+                //                    .font(.title2.bold())
+                //                    .frame(maxWidth: .infinity, alignment: .leading)
+                //                    .padding(.vertical , 20)
+                
+                //                if let task = foods.first(where: { task in
+                //                    return isSameDay(date1: task.foodDate, date2: currentDate)
+                //                }) {
+                //
+                //                    ForEach(task.food) { task in
+                //
+                //                        VStack(alignment: .leading, spacing: 10) {
+                //
+                //                            Text("탄수화물: " + String(format: "%.1f", task.carbo))
+                //                                .font(.body)
+                //                            Text("단백질: " + String(format: "%.1f", task.protein))
+                //                                .font(.body)
+                //                            Text("지방: " + String(format: "%.1f", task.province))
+                //                                .font(.body)
+                //                            Text("수분: \(task.water)")
+                //                                .font(.body)
+                //
+                //                        }
+                //                        .padding(.vertical, 10)
+                //                        .padding(.horizontal)
+                //                        .frame(maxWidth: .infinity, alignment: .leading)
+                //                        .background(
+                //                            Color("Purple")
+                //                                .opacity(0.5)
+                //                                .cornerRadius(10)
+                //                                .frame(maxWidth: .infinity)
+                //
+                //                        )
+                //
+                //                    }
+                //
+                //                }else {
+                //                    Text("No Task Found")
+                //                }
             }
             .padding()
-
+            
             
         }
         .onChange(of: currentMonth) { newValue in
@@ -177,25 +177,13 @@ struct CustomCalendar: View {
         VStack {
             
             if value.day != -1 {
-                
-                List {
-                    if let items = user.foods!.allObjects as? [Food] {
-                        ForEach(items) { item in
-                            NavigationLink{
-                                
-                                //Text("Item at \(item.name!)")
-                            } label: {
-                                let protein = String(format: "%.2f", item.protein)
-                                let time = DateFormatter().string(from: item.today!)
-                                //Text("시간 : \(time)")
-                                Text("단백질 : \(protein)")
-                            }
-                        }
-                        //.onDelete(perform: deleteItems)
-                    }
-                    
-                }
-                
+//                if let items = user.foods!.allObjects as? [Food] {
+//                    ForEach(items) { item in
+//
+//                    }
+//
+//                }
+//
                 if let food = user.foods!.first(where: { food in
                     return isSameDay(date1: (food as AnyObject).today!, date2: value.date)
                 }) {
@@ -203,7 +191,7 @@ struct CustomCalendar: View {
                         .font(.title3.bold())
                         .foregroundColor(isSameDay(date1: (food as AnyObject).today!, date2: currentDate) ? .white : .primary)
                         .frame(maxWidth: .infinity)
-
+                    
                     Spacer()
                     
                     Circle()
@@ -214,15 +202,15 @@ struct CustomCalendar: View {
                         .font(.title3.bold())
                         .foregroundColor(isSameDay(date1: value.date , date2: currentDate) ? .white : .gray)
                         .frame(maxWidth: .infinity)
-
+                    
                     Spacer()
                 }
-
+                
             }
         }
         .padding(.vertical, 9)
         .frame(height: 60, alignment: .top)
-            
+        
     }
     // Checking dates
     func isSameDay(date1: Date, date2: Date) -> Bool {
@@ -238,7 +226,7 @@ struct CustomCalendar: View {
         formatter.dateFormat = "YYYY MMMM"
         
         let date = formatter.string(from: currentDate)
-         
+        
         return date.components(separatedBy: " ")
     }
     
@@ -304,6 +292,11 @@ extension Date {
         
     }
     
-    
+    func formatted(_ format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        return formatter.string(from: self)
+    }
 }
 

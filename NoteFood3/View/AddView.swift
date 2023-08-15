@@ -9,23 +9,24 @@ import SwiftUI
 
 struct AddView: View {
 //    @Binding var today: String = ""
-    @Environment(\.managedObjectContext) var managedObjectContext
+    //@Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) var dismiss
     
     var user: User
-    var today = Date()
+    var today: Date
     
     @State private var carbo: Double = 0
     @State private var protein: Double = 0
     @State private var province: Double = 0
     @State private var water: Int = 0
+   // @State private var selectedUser = User()
     
     var body: some View {
         ZStack{
             ColorManager.BackgroundColor.ignoresSafeArea()
             VStack{
-                Text("Today")
+                Text("\(formatter.string(from: today))")
                     .font(.title2)
                 
                 Divider()
@@ -84,6 +85,7 @@ struct AddView: View {
                 
                 Button(action: {
                     addFood()
+                    dismiss()
                 }, label: {
                     ZStack{
                         Capsule()
@@ -102,24 +104,36 @@ struct AddView: View {
         
     }
     
+    let formatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM/dd"
+            return formatter
+        }()
+    
     func addFood() {
         let newFood = Food(context: viewContext)
+        newFood.id = UUID()
         newFood.user = user
-        newFood.today = self.today
+        newFood.today = today
         newFood.carbo = self.carbo
         newFood.protein = self.protein
         newFood.province = self.province
         newFood.water = Int32(self.water)
         
+        
+        //let _ = print("\(newFood.today)")
+        //FoodDataContorller().save(context: viewContext)
         do {
             try viewContext.save()
+            //dismiss() //가장 처음에 저장된 날짜에 뜸
+
         } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
-        dismiss()
+        //dismiss() //가장 마지막에 저장된 날짜로 뜸
+        //try? managedObjectContext.save()
+        
     }
 }
 
